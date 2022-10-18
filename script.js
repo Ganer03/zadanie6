@@ -47,18 +47,18 @@ function updatePrice(form) {
     return false;
 }
 
-function getPrice() {
+function getPrices() {
     return {
         selections : [800, 88000, 700],
         radioboxes: {
             val1 : 88000,
             val2 : 22000,
-            val3 : 52000
+            val3 : 52000,
         },
         checks: {
             check1 : 30,
             check2 : 25,
-            check3 : 35
+            check3 : 35,
         }
     };
 }
