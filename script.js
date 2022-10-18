@@ -27,7 +27,7 @@ function updatePrice(form) {
     
     let checkbox = document.getElementById("checkbox");
     checkbox.style.display = (select.value == "3" ? "block" : "none");
-    let checkboxes = document.querySelectorAll("#checkbox div input");
+    let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         let propPrice = prices.checks[checkbox.name];
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
         updatePrice(document.getElementById("form1"));
       });
     });
-    let checkboxes = document.querySelectorAll("#checkbox div input");
+    let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener("change", function(event) {
         let check = event.target;
