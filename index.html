@@ -7,16 +7,42 @@
 </head>
     <body>
         <div class="form">
-            <h2> Калькулятор стоимости заказа</h2>
+            <h2> Калькулятор стоимости товара или услуги</h2>
             <form method="POST" id="form1">
-                <div class="input1">
-                    <label id="label1">Цена товара(в рублях)</label>
-                    <input id="field1" type="text" name="price" placeholder="Введите цену товара">
-                </div>
-                <div class="input2">
+                <div class="input" id="input">
                     <label id="label2">Количество товара</label>
                     <input id="field2" type="text" name="kolvo" placeholder="Введите количество товара">
                 </div>
+                <div class="list" id="list">
+                    <label id="label2">Тип товара</label>
+                    <select name="field_name_3">
+                        <option value="Значение1">Priora</option>
+                        <option value="Значение2">Laptop</option>
+                        <option value="Значение1">Iphone</option>
+                    </select>
+                </div>
+                <div class="radiobox" id="radiobox">
+                    <label id="label3">Объем памяти</label>
+                    <label>
+                        <input type="radio" name="radio-group-1" value="val1">128гб
+                    </label>
+                    <label>
+                        <input type="radio"name="radio-group-1" value="val2">256гб
+                    </label>
+                    <label>
+                        <input type="radio"name="radio-group-1" value="val3">512гб
+                    </label>
+                </div>
+                <div class="checkbox" id="checkbox">
+                    <label id="label4">Доп свойства</label>
+                    <label>
+                        <input type="checkbox" name="check1">C SSD
+                        128гб
+                        <input type="checkbox" name="check2">Видеокарта новейшая(rtx 4 поколения)
+                        256гб
+                        <input type="checkbox" name="check3">Процессор популярног бренда(intel или ryzen)
+                    </label>
+                <div>
                 <button type="button" onclick="valid(document.getElementById('form1'))" name="button">
                     Отправить
                 </button>
