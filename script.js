@@ -1,7 +1,7 @@
 function updatePrice(form) {
-    var otvet=false;
-    var kol=form.kolvo.value;
-    var kolvo_ok=/^[1-9][0-9]*$/;
+    let otvet=false;
+    let kol=form.kolvo.value;
+    let kolvo_ok=/^[1-9][0-9]*$/;
     if (kolvo_ok.test(kol)==false) {
         otvet="Неправильно введено количество товара!";
     }
