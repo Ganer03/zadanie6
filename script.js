@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
         updatePrice(document.getElementById("form1"));
       });
     });
-    let checkboxes = document.querySelectorAll("#checkbox input");
+    let checkboxes = document.querySelectorAll("#checkbox div input");
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener("change", function(event) {
         let check = event.target;
