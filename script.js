@@ -2,7 +2,7 @@ function valid(form) {
     var otvet=false;
     var kol=form.kolvo.value;
     var result=document.getElementById("result");
-    var kolvo_ok=/[0-9]/;
+    var kolvo_ok=/^[1-9][0-9]*$/;
     if (kolvo_ok.test(kol)==false) {
         otvet="Неправильно введено количество товара!";
     }
