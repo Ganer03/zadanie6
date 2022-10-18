@@ -1,4 +1,4 @@
-function valid(form) {
+function updatePrice(form) {
     var otvet=false;
     var kol=form.kolvo.value;
     var kolvo_ok=/^[1-9][0-9]*$/;
