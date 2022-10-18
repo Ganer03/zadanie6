@@ -6,7 +6,7 @@ function valid(form) {
     if (kolvo_ok.test(kol)==false) {
         otvet="Неправильно введено количество товара!";
     }
-    let s = document.getElementsByName("selection");
+    let s = document.getElementsByName("field_name_3");
     let select = s[0];
     let price = 0;
     let prices = getPrices();
@@ -28,7 +28,7 @@ function valid(form) {
     
     let checkDiv = document.getElementById("checkbox");
     checkDiv.style.display = (select.value == "3" ? "block" : "none");
-    let checkboxes = document.querySelectorAll("#check1 input");
+    let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         let propPrice = prices.checks[checkbox.name];
@@ -50,11 +50,11 @@ function valid(form) {
 
 function getPrice() {
     return {
-        selections : [500, 3000, 700],
-        radioButs: {
+        selections : [800, 88000, 700],
+        radiobox: {
             val1 : 88000,
-            val2 : 100000,
-            val3 : 140000,
+            val2 : 22000,
+            val3 : 52000,
         },
         checks: {
             check1 : 30,
