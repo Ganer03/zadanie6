@@ -26,8 +26,8 @@ function valid(form) {
       }
     });
     
-    let checkDiv = document.getElementById("checkbox");
-    checkDiv.style.display = (select.value == "3" ? "block" : "none");
+    let checkbox = document.getElementById("checkbox");
+    checkbox.style.display = (select.value == "3" ? "block" : "none");
     let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
