@@ -25,10 +25,6 @@ button{
   display: flex;
   flex-direction: column;
 }
-#one, #two{
-  display: flex;
-  flex-direction: column;
-}
 #field1, #field_name_3 {
   width: 80%;
   margin: auto;
