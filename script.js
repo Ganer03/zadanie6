@@ -11,7 +11,7 @@ function updatePrice(form) {
     let prices = getPrices();
     let priceIndex = parseInt(select.value) - 1;
     if (priceIndex >= 0) {
-      price = prices.selections[priceIndex];
+      price = prices.field_name_3[priceIndex];
     }
     let radiobox = document.getElementById("radiobox");
     radiobox.style.display = (select.value == "2" ? "block" : "none");
@@ -49,7 +49,7 @@ function updatePrice(form) {
 
 function getPrice() {
     return {
-        selections : [800, 88000, 700],
+        field_name_3 : [800, 88000, 700],
         radiobox: {
             val1 : 88000,
             val2 : 22000,
