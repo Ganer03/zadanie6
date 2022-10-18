@@ -77,17 +77,17 @@ window.addEventListener('DOMContentLoaded', function (event) {
     let radios = document.getElementsByName("radiobox");
     radios.forEach(function(radio) {
       radio.addEventListener("change", function(event) {
-        let r = event.target;
-        console.log(r.value);
+        let val = event.target;
+        console.log(val.value);
         updatePrice(document.getElementById("form1"));
       });
     });
     let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener("change", function(event) {
-        let c = event.target;
-        console.log(c.name);
-        console.log(c.value);
+        let check = event.target;
+        console.log(check.name);
+        console.log(check.value);
         updatePrice(document.getElementById("form1"));
       });
     });
