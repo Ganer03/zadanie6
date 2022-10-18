@@ -27,7 +27,7 @@ button{
 }
 #one, #two{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 #field1, #field_name_3 {
   width: 80%;
