@@ -21,17 +21,17 @@ button{
   display: grid;
   grid-row-gap: 10px;
 }
-.input1, .input2{
+.input, .list, .radiobox, .checkbox {
   display: flex;
   flex-direction: column;
 }
-#field1, #field2{
+#field1, #field_name_3, input[type=radio], input[type=checkbox] {
   width: 80%;
   margin: auto;
   height: 30px;
   border-radius: 8px;
 }
-#label1, #label2, #result {
+#label1, #label2, #label3, #label4, #result {
   font-size: 20px;
   color: rgb(2, 26, 48);
   font-weight: bold;
