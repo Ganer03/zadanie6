@@ -66,7 +66,7 @@ function getPrice() {
 window.addEventListener('DOMContentLoaded', function (event) {
     let radiobox = document.getElementById("radiobox");
     radiobox.style.display = "none";
-    let s = document.getElementsByName("selection");
+    let s = document.getElementsByName("field_name_3");
     let select = s[0];
     select.addEventListener("change", function(event) {
     let target = event.target;
