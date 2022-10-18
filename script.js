@@ -27,7 +27,7 @@ function updatePrice(form) {
     
     let checkbox = document.getElementById("checkbox");
     checkbox.style.display = (select.value == "3" ? "block" : "none");
-    let checkboxes = document.querySelectorAll("#checkbox input");
+    let checkboxes = document.querySelectorAll("#checkbox div input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         let propPrice = prices.checks[checkbox.name];
