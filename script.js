@@ -11,23 +11,23 @@ function updatePrice(form) {
     let prices = getPrices();
     let priceIndex = parseInt(select.value) - 1;
     if (priceIndex >= 0) {
-      price = prices.field_name_3[priceIndex];
+      price = prices.selections[priceIndex];
     }
-    let radiobox = document.getElementById("radiobox");
-    radiobox.style.display = (select.value == "2" ? "block" : "none");
+    let radioDiv = document.getElementById("radiobox");
+    radioDiv.style.display = (select.value == "2" ? "block" : "none");
     let radios = document.getElementsByName("radiobox");
     radios.forEach(function(radio) {
       if (radio.checked) {
-        let optionPrice = prices.radiobox[radio.value];
+        let optionPrice = prices.radioboxes[radio.value];
         if (optionPrice !== undefined) {
           price += optionPrice;
         }
       }
     });
     
-    let checkbox = document.getElementById("checkbox");
-    checkbox.style.display = (select.value == "3" ? "block" : "none");
-    let checkboxes = document.querySelectorAll("#checkbox input");
+    let checkDiv = document.getElementById("checkbox1");
+    checkDiv.style.display = (select.value == "3" ? "block" : "none");
+    let checkboxes = document.querySelectorAll("#checkbox1 input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         let propPrice = prices.checks[checkbox.name];
@@ -49,8 +49,8 @@ function updatePrice(form) {
 
 function getPrice() {
     return {
-        field_name_3 : [800, 88000, 700],
-        radiobox: {
+        selections : [800, 88000, 700],
+        radioboxes: {
             val1 : 88000,
             val2 : 22000,
             val3 : 52000,
@@ -64,9 +64,9 @@ function getPrice() {
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
-    let radiobox = document.getElementById("radiobox");
-    radiobox.style.display = "none";
-    let s = document.getElementsByName("field_name_3");
+    let radioDiv = document.getElementById("radiobox");
+    radioDiv.style.display = "none";
+    let s = document.getElementsByName("fieldname3");
     let select = s[0];
     select.addEventListener("change", function(event) {
     let target = event.target;
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
         updatePrice(document.getElementById("form1"));
       });
     });
-    let checkboxes = document.querySelectorAll("#checkbox input");
+    let checkboxes = document.querySelectorAll("#checkbox1 input");
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener("change", function(event) {
         let check = event.target;
