@@ -25,7 +25,11 @@ button{
   display: flex;
   flex-direction: column;
 }
-#field1, #field_name_3, input[type=radio], input[type=checkbox] {
+#one, #two{
+  display: flex;
+  justify-content: center;
+}
+#field1, #field_name_3 {
   width: 80%;
   margin: auto;
   height: 30px;
