@@ -26,7 +26,7 @@ function valid(form) {
       }
     });
     
-    let checkDiv = document.getElementById("check1");
+    let checkDiv = document.getElementById("checkbox");
     checkDiv.style.display = (select.value == "3" ? "block" : "none");
     let checkboxes = document.querySelectorAll("#check1 input");
     checkboxes.forEach(function(checkbox) {
@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
         updatePrice(document.getElementById("form1"));
       });
     });
-    let checkboxes = document.querySelectorAll("#check1 input");
+    let checkboxes = document.querySelectorAll("#checkbox input");
     checkboxes.forEach(function(checkbox) {
       checkbox.addEventListener("change", function(event) {
         let c = event.target;
