@@ -5,7 +5,7 @@ function updatePrice(form) {
     if (kolvo_ok.test(kol)==false) {
         otvet="Неправильно введено количество товара!";
     }
-    let s = document.getElementsByName("field_name_3");
+    let s = document.getElementsByName("fieldname3");
     let select = s[0];
     let price = 0;
     let prices = getPrices();
