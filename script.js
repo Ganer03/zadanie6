@@ -16,9 +16,9 @@ function updatePrice(form) {
     let radioDiv = document.getElementById("radiobox");
     radioDiv.style.display = (select.value == "2" ? "block" : "none");
     let radios = document.getElementsByName("radiobox");
-    radios.forEach(function(radiobox) {
-      if (radiobox.checked) {
-        let optionPrice = prices.radioboxes[radiobox.value];
+    radios.forEach(function(radio) {
+      if (radio.checked) {
+        let optionPrice = prices.radioboxes[radio.value];
         if (optionPrice !== undefined) {
           price += optionPrice;
         }
@@ -74,8 +74,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
     updatePrice(document.getElementById("form1"));
     });
     let radios = document.getElementsByName("radiobox");
-    radios.forEach(function(radiobox) {
-      radiobox.addEventListener("change", function(event) {
+    radios.forEach(function(radio) {
+      radio.addEventListener("change", function(event) {
         let v = event.target;
         console.log(v.value);
         updatePrice(document.getElementById("form1"));
