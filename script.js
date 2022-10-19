@@ -13,7 +13,6 @@ function updatePrice(form) {
     if (priceIndex >= 0) {
       price = prices.selections[priceIndex];
     }
-    if(select.value == "2"){
     let radioDiv = document.getElementById("radiobox");
     radioDiv.style.display = (select.value == "2" ? "block" : "none");
     let radios = document.getElementsByName("radiobox");
@@ -25,8 +24,6 @@ function updatePrice(form) {
         }
       }
     });
-    }
-    if (select.value == "3"){
     let checkDiv = document.getElementById("checkbox1");
     checkDiv.style.display = (select.value == "3" ? "block" : "none");
     let checkboxes = document.querySelectorAll("#checkbox1 input");
@@ -37,8 +34,7 @@ function updatePrice(form) {
           price += propPrice;
         }
       }
-    }); 
-    }
+    });
     if (otvet) {
         alert(otvet);
     }
@@ -66,6 +62,10 @@ function getPrices() {
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
+    let radioDiv = document.getElementById("radiobox");
+    radioDiv.style.display = "none";
+    let checkDiv = document.getElementById("checkbox1");
+    chekDiv.style.display = "none";
     let s = document.getElementsByName("fieldname3");
     let select = s[0];
     select.addEventListener("change", function(event) {
