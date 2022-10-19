@@ -51,9 +51,9 @@ function getPrices() {
     return {
         selections : [800, 88000, 700],
         radioboxes: {
-            val1 : 88000,
-            val2 : 22000,
-            val3 : 52000,
+            v1 : 88000,
+            v2 : 22000,
+            v3 : 52000,
         },
         checks: {
             check1 : 30,
