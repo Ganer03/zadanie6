@@ -13,7 +13,7 @@ let prices = {
 };
 
 function get_price(){
-  let kolvo=document.querySelector("form#form1 > input[name=kolvo]").value;
+  let kolvo=document.querySelector("form#form1 > div#input > input[name=kolvo]").value;
   let kolvo_ok=/^[1-9][0-9]*$/;
   if (kolvo_ok.test(kolvo)==false) {
       alert("Неправильно введено количество товара!");
