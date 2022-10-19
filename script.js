@@ -19,7 +19,7 @@ function updatePrice(form) {
     radios.forEach(function(radio) {
       if (radio.checked) {
         let optionPrice = prices.radioboxes[radio.value];
-        if (optionPrice !== undefined) {
+        if (optionPrice !== undefined && select.value == "2" ) {
           price += optionPrice;
         }
       }
@@ -30,7 +30,7 @@ function updatePrice(form) {
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
         let propPrice = prices.checks[checkbox.name];
-        if (propPrice !== undefined) {
+        if (propPrice !== undefined && select.value == "3") {
           price += propPrice;
         }
       }
@@ -62,10 +62,6 @@ function getPrices() {
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
-    let radioDiv = document.getElementById("radiobox");
-    radioDiv.style.display = "none";
-    let checkDiv = document.getElementById("checkbox1");
-    chekDiv.style.display = "none";
     let s = document.getElementsByName("fieldname3");
     let select = s[0];
     select.addEventListener("change", function(event) {
