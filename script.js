@@ -2,7 +2,7 @@ function updatePrice(form) {
     let otvet=false;
     let kol=form.kolvo.value;
     let kolvo_ok=/^[1-9][0-9]*$/;
-    if (kolvo_ok.test(kol)==false) {
+    if (kolvo_ok.test(kol)==false  || kol<0) {
         otvet="Неправильно введено количество товара!";
     }
     let s = document.getElementsByName("fieldname3");
@@ -49,23 +49,21 @@ function updatePrice(form) {
 
 function getPrices() {
     return {
-        selections : [800, 88000, 700],
+        selections : [800, 88000, 20000],
         radioboxes: {
-            v1 : 88000,
+            v1 : 0,
             v2 : 22000,
             v3 : 52000,
         },
         checks: {
-            check1 : 30,
-            check2 : 25,
-            check3 : 35,
+            check1 : 3000,
+            check2 : 10000,
+            check3 : 3500,
         }
     };
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
-    let radioDiv = document.getElementById("radiobox");
-    radioDiv.style.display = "none";
     let s = document.getElementsByName("fieldname3");
     let select = s[0];
     select.addEventListener("change", function(event) {
