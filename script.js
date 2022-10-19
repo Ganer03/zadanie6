@@ -1,95 +1,82 @@
-function updatePrice(form) {
-    let otvet=false;
-    let kol=form.kolvo.value;
-    let kolvo_ok=/^[1-9][0-9]*$/;
-    if (kolvo_ok.test(kol)==false  || kol<0) {
-        otvet="Неправильно введено количество товара!";
+let prices = {
+    selections : [800, 88000, 20000],
+    radioboxes: {
+        v1 : 0,
+        v2 : 22000,
+        v3 : 52000,
+    },
+    checks: {
+        check1 : 3000,
+        check2 : 10000,
+        check3 : 3500,
     }
-    let s = document.getElementsByName("fieldname3");
-    let select = s[0];
-    let price = 0;
-    let prices = getPrices();
-    let priceIndex = parseInt(select.value) - 1;
-    if (priceIndex >= 0) {
-      price = prices.selections[priceIndex];
+};
+
+function get_price(){
+  let kolvo=document.querySelector("form#form1 > input[name=kolvo]").value;
+  let kolvo_ok=/^[1-9][0-9]*$/;
+  if (kolvo_ok.test(kolvo)==false) {
+      alert("Неправильно введено количество товара!");
+      return NaN;
+  } else {
+    let selector = document.querySelector("select[name=fieldname3]");
+    let price = prices.selections[parseInt(selector.value) - 1];
+    let elements;
+    switch (parseInt(selector.value)) {
+      case 2:
+        elements = document.querySelectorAll("input[name=radiobox]:checked");
+        elements.forEach(function(element) {
+          price += prices.radioboxes[element.value];
+        });
+        break;
+      case 3:
+        elements = document.querySelectorAll("div.checkbox > label > input:checked");
+        elements.forEach(function(element) {
+          console.log(element.name);
+          price += prices.checks[element.name];
+        });
+        break;
+      default:
+        break;
     }
-    let radioDiv = document.getElementById("radiobox");
-    radioDiv.style.display = (select.value == "2" ? "block" : "none");
-    let radios = document.getElementsByName("radiobox");
-    radios.forEach(function(radio) {
-      if (radio.checked) {
-        let optionPrice = prices.radioboxes[radio.value];
-        if (optionPrice !== undefined && select.value == "2" ) {
-          price += optionPrice;
-        }
-      }
-    });
-    let checkDiv = document.getElementById("checkbox1");
-    checkDiv.style.display = (select.value == "3" ? "block" : "none");
-    let checkboxes = document.querySelectorAll("#checkbox1 input");
-    checkboxes.forEach(function(checkbox) {
-      if (checkbox.checked) {
-        let propPrice = prices.checks[checkbox.name];
-        if (propPrice !== undefined && select.value == "3") {
-          price += propPrice;
-        }
-      }
-    });
-    if (otvet) {
-        alert(otvet);
-    }
-    else {
-        let result = document.getElementById("result");
-        result.innerHTML="Стоимость заказа:"+price*kol+" "+"рублей.";
-    }
-    return false;
+    return price*parseInt(kolvo);
+  }
 }
 
-function getPrices() {
-    return {
-        selections : [800, 88000, 20000],
-        radioboxes: {
-            v1 : 0,
-            v2 : 22000,
-            v3 : 52000,
-        },
-        checks: {
-            check1 : 3000,
-            check2 : 10000,
-            check3 : 3500,
-        }
-    };
+function updatePrice() {
+  let result = document.querySelector("div#result");
+  result.textContent = "Стоимость заказа:"+get_price()+" "+"рублей.";
 }
 
-window.addEventListener('DOMContentLoaded', function (event) {
-    let s = document.getElementsByName("fieldname3");
-    let select = s[0];
-    select.addEventListener("change", function(event) {
-    let target = event.target;
-    console.log(target.value);
-    updatePrice(document.getElementById("form1"));
-    });
-    let radios = document.getElementsByName("radiobox");
-    radios.forEach(function(radio) {
-      radio.addEventListener("change", function(event) {
-        let v = event.target;
-        console.log(v.value);
-        updatePrice(document.getElementById("form1"));
-      });
-    });
-    let checkboxes = document.querySelectorAll("#checkbox1 input");
-    checkboxes.forEach(function(checkbox) {
-      checkbox.addEventListener("change", function(event) {
-        let check = event.target;
-        console.log(check.name);
-        console.log(check.value);
-        updatePrice(document.getElementById("form1"));
-      });
-    });
-    updatePrice(document.getElementById("form1"));
-  });
+function updateView(){
+  let selector = document.querySelector("select[name=fieldname3]");
+  console.log("update view");
+  console.log(selector.value);
+  switch (parseInt(selector.value)) {
+    case 2:
+      document.querySelector("div.checkbox").style.display = "none";
+      document.querySelectorAll("input[name=check1]").checked = false;
 
-function ready() {
-    console.log("DOM is ready");
+      document.querySelector("div.radiobox").style.display = "block";
+      document.querySelector("input[name=radiobox]").checked = true;
+      break;
+    case 3:
+      document.querySelector("div.radiobox").style.display = "none";
+      document.querySelectorAll("input[name=radiobox]").checked = false;
+
+      document.querySelector("div.checkbox").style.display = "block";
+      break;
+    default:
+      document.querySelector("div.radiobox").style.display = "none";
+      document.querySelector("div.checkbox").style.display = "none";
+      document.querySelectorAll("input[name=radiobox]").checked = false;
+      document.querySelectorAll("input[name=check1]").checked = false;
+  }
 }
-document.addEventListener("DOMContentLoaded",ready);
+
+
+console.log("DOM is ready");
+
+let selector = document.querySelector("select[name=fieldname3]");
+updateView();
+selector.addEventListener("change", updateView);
