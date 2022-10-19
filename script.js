@@ -15,6 +15,7 @@ function updatePrice(form) {
     }
     let radioDiv = document.getElementById("radiobox");
     radioDiv.style.display = (select.value == "2" ? "block" : "none");
+    if(select.value == "2"){
     let radios = document.getElementsByName("radiobox");
     radios.forEach(function(radio) {
       if (radio.checked) {
@@ -23,10 +24,11 @@ function updatePrice(form) {
           price += optionPrice;
         }
       }
-    });
+    }});
     
     let checkDiv = document.getElementById("checkbox1");
     checkDiv.style.display = (select.value == "3" ? "block" : "none");
+    if(select.value == "3"){
     let checkboxes = document.querySelectorAll("#checkbox1 input");
     checkboxes.forEach(function(checkbox) {
       if (checkbox.checked) {
@@ -35,7 +37,7 @@ function updatePrice(form) {
           price += propPrice;
         }
       }
-    }); 
+    }}); 
     
     if (otvet) {
         alert(otvet);
