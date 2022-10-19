@@ -45,7 +45,7 @@ function get_price(){
 
 function updatePrice() {
   let result = document.querySelector("div#result");
-  result.textContent = "Стоимость заказа:"+get_price()+" "+"рублей.";
+  result.innerHTML = "Стоимость заказа:"+get_price()+" "+"рублей.";
 }
 
 function updateView(){
