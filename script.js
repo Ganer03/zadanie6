@@ -1,4 +1,4 @@
-function get_price(){
+function Price(){
   let kolvo=document.querySelector("input[name=kolvo]").value;
   let kolvo_ok=/^[1-9][0-9]*$/;
   if (kolvo_ok.test(kolvo)==false) {
@@ -28,12 +28,12 @@ function get_price(){
   }
 }
 
-function updatePrice() {
+function update() {
   let result = document.querySelector("#rez");
-  result.innerHTML = "Стоимость заказа:"+get_price()+" "+"рублей.";
+  result.innerHTML = "Стоимость заказа:"+Price()+" "+"рублей.";
 }
 
-function updateView(){
+function update1(){
   let selector = document.querySelector("select[name=fieldname3]");
   switch (parseInt(selector.value)) {
     case 2:
@@ -74,5 +74,5 @@ let prices = {
 console.log("DOM is ready");
 
 let selector = document.querySelector("select[name=fieldname3]");
-updateView();
-selector.addEventListener("change", updateView);
+update1();
+selector.addEventListener("change", update1);
