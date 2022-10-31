@@ -16,7 +16,7 @@ function get_price(){
         });
         break;
       case 3:
-        elements = document.querySelectorAll("input[name=check]:checked");
+        elements = document.querySelectorAll("input[value=ch]:checked");
         elements.forEach(function(element) {
           price += prices.checks[element.name];
         });
