@@ -10,11 +10,11 @@
             <h2> Калькулятор стоимости товара или услуги</h2>
             <form method="POST" id="form1">
                 <div class="input" id="input">
-                    <label id="label1">Количество товара</label>
+                    <label id="lb">Количество товара</label>
                     <input id="field1" type="text" name="kolvo" placeholder="Введите количество товара">
                 </div>
                 <div class="list" id="list">
-                    <label id="label2">Тип товара</label>
+                    <label id="lb">Тип товара</label>
                     <select name="fieldname3" id="field_name_3">
                         <option value="1">Priora</option>
                         <option value="2">Iphone</option>
@@ -22,32 +22,32 @@
                     </select>
                 </div>
                 <div class="radiobox" id="radiobox" style="display: none;">
-                    <label id="label3">Объем памяти</label><br>
+                    <label id="lb">Объем памяти</label><br>
                         <label>
-                            <input type="radio" name="radiobox" value="v1">128гб
+                            <input type="radio" name="radiobox" value="rd1">128гб
                         </label><br>
                         <label>
-                            <input type="radio" name="radiobox" value="v2">256гб
+                            <input type="radio" name="radiobox" value="rd2">256гб
                         </label><br>
                         <label>
-                            <input type="radio" name="radiobox" value="v3">512гб
+                            <input type="radio" name="radiobox" value="rd3">512гб
                         </label>
                 </div>
                 <div class="checkbox" id="checkbox1" style="display: block;">
-                    <label id="label4">Доп свойства сборки</label><br>
+                    <label id="lb">Доп свойства сборки</label><br>
                         <label>
-                            <input type="checkbox" name="check1">C SSD
+                            <input type="checkbox" name="check" vakue="ch1">C SSD
                         </label><br>
                         <label>
-                            <input type="checkbox" name="check2">Видеокарта новейшая(rtx 4 поколения)
+                            <input type="checkbox" name="check" value="ch2">Видеокарта новейшая(rtx 4 поколения)
                         </label><br>
                         <label>
-                            <input type="checkbox" name="check3">Процессор популярног бренда(intel или ryzen)
+                            <input type="checkbox" name="check" value="ch3">Процессор популярног бренда(intel или ryzen)
                         </label>
                 </div><br>
                 <input id="button1" autocomplete="off" type="button" onclick="updatePrice()" name="button" value="Отправить">
             </form>
         </div>
-        <div id="result"></div>
+        <div id="rez"></div>
     </body>
 </html>
