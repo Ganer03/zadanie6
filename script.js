@@ -38,7 +38,7 @@ function updateView(){
   switch (parseInt(selector.value)) {
     case 2:
       document.querySelector("div.checkbox").style.display = "none";
-      document.querySelectorAll("input[name=check]").checked = false;
+      document.querySelectorAll("input[type=checkbox]").checked = false;
 
       document.querySelector("div.radiobox").style.display = "block";
       document.querySelector("input[name=radiobox]").checked = true;
@@ -53,7 +53,7 @@ function updateView(){
       document.querySelector("div.radiobox").style.display = "none";
       document.querySelector("div.checkbox").style.display = "none";
       document.querySelectorAll("input[name=radiobox]").checked = false;
-      document.querySelectorAll("input[name=check]").checked = false;
+      document.querySelectorAll("input[type=checkbox]").checked = false;
   }
 }
 
