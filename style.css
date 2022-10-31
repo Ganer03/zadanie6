@@ -5,17 +5,8 @@ body{
 .form{
   margin: auto;
   max-width: 960px;
-  background: linear-gradient(to top, rgb(40, 110, 178), rgb(190, 210, 215));
-  padding: 20px;
-  text-align: center;
-  margin-block-end: 30px;
-}
-button{
-  margin: auto;
-  width: 40%;
-  height: 30px;
-  border-radius: 8px;
-  background-color: dodgerblue;
+  background: rgb(190, 210, 215);
+  padding: 10px;
 }
 #form1{
   display: grid;
@@ -31,14 +22,10 @@ button{
   height: 30px;
   border-radius: 8px;
 }
-#label1, #label2, #label3, #label4, #result {
-  font-size: 20px;
-  color: rgb(2, 26, 48);
-  font-weight: bold;
-  text-decoration: underline;
-  font-family: 'Times New Roman', Times, serif;
+#lb {
+  font-size: 15px;
 }
 #result{
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
