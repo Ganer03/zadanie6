@@ -1,19 +1,5 @@
-let prices = {
-    selections : [800, 88000, 20000],
-    radioboxes: {
-        v1 : 0,
-        v2 : 22000,
-        v3 : 52000,
-    },
-    checks: {
-        check1 : 3000,
-        check2 : 10000,
-        check3 : 3500,
-    }
-};
-
 function get_price(){
-  let kolvo=document.querySelector("form#form1 > div#input > input[name=kolvo]").value;
+  let kolvo=document.querySelector("input[name=kolvo]").value;
   let kolvo_ok=/^[1-9][0-9]*$/;
   if (kolvo_ok.test(kolvo)==false) {
       alert("Неправильно введено количество товара!");
@@ -30,10 +16,10 @@ function get_price(){
         });
         break;
       case 3:
-        elements = document.querySelectorAll("div.checkbox > label > input:checked");
+        elements = document.querySelectorAll("input[name=check]:checked");
         elements.forEach(function(element) {
           console.log(element.name);
-          price += prices.checks[element.name];
+          price += prices.checks[element.value];
         });
         break;
       default:
@@ -44,7 +30,7 @@ function get_price(){
 }
 
 function updatePrice() {
-  let result = document.querySelector("div#result");
+  let result = document.querySelector("#rez");
   result.innerHTML = "Стоимость заказа:"+get_price()+" "+"рублей.";
 }
 
@@ -74,6 +60,19 @@ function updateView(){
   }
 }
 
+let prices = {
+    selections : [800, 88000, 20000],
+    radioboxes: {
+        rd1 : 0,
+        rd2 : 22000,
+        rd3 : 52000,
+    },
+    checks: {
+        ch1 : 3000,
+        ch2 : 10000,
+        ch3 : 3500,
+    }
+};
 
 console.log("DOM is ready");
 
